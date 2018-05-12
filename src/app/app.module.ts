@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
+import { PropertyBindingComponent } from './components/property-binding.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,HeaderComponent,PropertyBindingComponent
   ],
   imports: [
     BrowserModule
