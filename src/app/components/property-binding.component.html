@@ -1,11 +1,23 @@
 
 <div class="box">
 
-  <h4>Property Binding</h4>
-  <div [id]="genid">
+  <h4>Property Binding And Events</h4>
+  <div (mouseenter)="onEnter($event,' On mouse enter')" [id]="genid">
     {{ genid }}
 
     <p [class]="genid">{{ description }}</p>
   </div>
+
+  <button class="button is-info" (click)="doSave()">Save</button>
+ 
+  <button class="button is-info" (click)="doClickEvent($event)">Save with event</button>
+
+  All Colors
+<!-- creating local template variable -->
+<input style="display: inline-block;width: 200px;" class="input" type="text" #colorInput>
+<button (click)="addColor(colorInput)" class="button is-success"> Add Color</button>
+  <ul>
+<li *ngFor="let c of colors;let indx = index"> {{ indx+1 }} - {{ c }}</li>
+  </ul>
 
 </div>
