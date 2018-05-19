@@ -1,4 +1,3 @@
-
 <div class="box">
 
   <h4>Property Binding And Events</h4>
@@ -9,15 +8,22 @@
   </div>
 
   <button class="button is-info" (click)="doSave()">Save</button>
- 
+
   <button class="button is-info" (click)="doClickEvent($event)">Save with event</button>
 
   All Colors
-<!-- creating local template variable -->
-<input style="display: inline-block;width: 200px;" class="input" type="text" #colorInput>
-<button (click)="addColor(colorInput)" class="button is-success"> Add Color</button>
-  <ul>
-<li *ngFor="let c of colors;let indx = index"> {{ indx+1 }} - {{ c }}</li>
+  <!-- creating local template variable using # -->
+  <input style="display: inline-block;width: 200px;" class="input" type="text" #colorInput>
+  <button (click)="addColor(colorInput)" class="button is-success"> Add Color</button>
+
+  <div class="box" *ngIf="colors.length===0">No colors, kindly input some</div>
+  <ul *ngIf="colors.length">
+    <li *ngFor="let c of colors;let indx = index;let first= first;let last = last;let odd=odd;let even=even"  [class.even]="even"   [class.odd]="odd">
+       <span [style.backgroundColor]="c">{{ indx+1 }} - {{ c }}  {{first}} {{last}} Odd: {{ odd }} Even: {{ even }}</span>
+      <button class="button is-danger" (click)="deleteColor(indx)">delete</button>
+    </li>
   </ul>
+
+  <div class="box" *ngFor="let c of colors;">{{c}}</div>
 
 </div>
