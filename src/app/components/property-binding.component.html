@@ -18,12 +18,55 @@
 
   <div class="box" *ngIf="colors.length===0">No colors, kindly input some</div>
   <ul *ngIf="colors.length">
-    <li *ngFor="let c of colors;let indx = index;let first= first;let last = last;let odd=odd;let even=even"  [class.even]="even"   [class.odd]="odd">
-       <span [style.backgroundColor]="c">{{ indx+1 }} - {{ c }}  {{first}} {{last}} Odd: {{ odd }} Even: {{ even }}</span>
+    <li *ngFor="let c of colors;let indx = index;let first= first;let last = last;let odd=odd;let even=even" [class.even]="even"
+      [class.odd]="odd">
+      <span [style.backgroundColor]="c">{{ indx+1 }} - {{ c }} {{first}} {{last}} Odd: {{ odd }} Even: {{ even }}</span>
       <button class="button is-danger" (click)="deleteColor(indx)">delete</button>
     </li>
   </ul>
 
   <div class="box" *ngFor="let c of colors;">{{c}}</div>
 
+</div>
+
+<button class="button is-small" (click)="changeState('is-info')">Info</button>
+<button class="button is-small" (click)="changeState('is-warning')">Warning</button>
+<input type="checkbox" (change)="addBorder()">Border
+<button class="button is-small" (click)="pushToArray()">Fill Class Array </button>
+<button class="button is-small" (click)="addSize()">3 column </button>
+<button class="button is-small" (click)="clearArray()">Clear Array</button>
+<button class="button is-small" (click)="toggleWarning()"> {{ clsObj['is-warning']?'Remove':'Add' }} Warning </button>
+<button class="button is-small" (click)="toggleColumn()">{{ clsObj['is-4']?'Remove':'Add' }} Column</button>
+
+{{ stateCls }} {{ clsObj | json }}
+
+<br>
+<button class="button is-small" (click)="addStyle('border','1px solid')">Add Border</button>
+<button class="button is-small" (click)="addStyle('background-color','lightgray')">Bg Color</button>
+<button class="button is-small" (click)="addStyle('margin-top','10px')">Margin top</button>
+<button class="button is-small" (click)="addMultiple()">Add Multiple</button>
+
+<div class="colums">
+  <!--String based-->
+  <!-- <article class="message" [ngClass]="stateCls"> -->
+
+  <!-- Array based-->
+  <!-- <article class="message column" [ngClass]="clsArray"> -->
+
+  <!-- Conditional object based -->
+  <article class="message column" [ngClass]="clsObj">
+
+    <div class="message-header">
+      <p>Link</p>
+      <button class="delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body" style="padding:4px" [ngStyle]="myStyle">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+      Nullam gravida purus diam, et dictum
+      <a>felis venenatis</a> efficitur. Aenean ac
+      <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id
+      porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+    </div>
+  </article>
 </div>

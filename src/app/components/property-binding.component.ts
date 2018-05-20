@@ -15,11 +15,22 @@ import { Component } from "@angular/core";
 export class PropertyBindingComponent {
   genid = "rowgen001";
   description = "This is a property binding component";
+  stateCls="";
 
+  clsArray=[];
+
+  myStyle:any={};
+
+  clsObj;
   colors;
 
   constructor() {
     this.colors = ["White", "Green", "Yellow"];
+    this.clsObj = {
+      "is-warning":false,
+      "is-4":false,
+      
+    }
   }
 
   doSave() {
@@ -45,5 +56,46 @@ export class PropertyBindingComponent {
     if (confirm("Are you sure?")) {
       this.colors.splice(indx, 1);
     }
+  }
+
+  changeState(cls){
+    this.stateCls = cls;
+  }
+
+  addBorder(){
+
+  }
+
+  pushToArray(){
+    this.clsArray.push('is-info');
+    this.clsArray.push('is-size-3');
+  }
+
+  addSize(){
+  this.clsArray.push('is-3');
+  }
+  clearArray(){
+    this.clsArray =[];
+  }
+
+  toggleWarning() {
+    this.clsObj['is-warning']= ! this.clsObj['is-warning'];
+  }
+  
+  toggleColumn() {
+    
+    this.clsObj['is-4']= ! this.clsObj['is-4'];
+  }
+
+  addStyle(key,value){
+    this.myStyle[key]=value;
+  }
+
+  addMultiple() {
+    this.myStyle.width="80%";
+    this.myStyle.height="300px";
+    this.myStyle.cursor="pointer";
+    this.myStyle.color="red";
+
   }
 }
