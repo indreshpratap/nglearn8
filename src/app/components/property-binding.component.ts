@@ -23,6 +23,7 @@ export class PropertyBindingComponent {
 
   clsObj;
   colors;
+  msgtype=0;
 
   constructor() {
     this.colors = ["White", "Green", "Yellow"];
@@ -47,9 +48,13 @@ export class PropertyBindingComponent {
   }
 
   addColor(input) {
+    if(input.value){
     console.log(input.value);
     this.colors.push(input.value);
     input.value='';
+    }else {
+      alert("Please input a color!");
+    }
   }
 
   deleteColor(indx) {
@@ -97,5 +102,9 @@ export class PropertyBindingComponent {
     this.myStyle.cursor="pointer";
     this.myStyle.color="red";
 
+  }
+
+  toggleMsgType(type){
+    this.msgtype = type;
   }
 }

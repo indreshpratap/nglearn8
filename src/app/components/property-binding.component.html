@@ -70,3 +70,47 @@
     </div>
   </article>
 </div>
+
+<button class="button is-small" (click)="toggleMsgType(1)">Info</button>
+<button class="button is-small" (click)="toggleMsgType(2)">Warning</button>
+<button class="button is-small" (click)="toggleMsgType(3)">Danger</button>
+
+<div [ngSwitch]="msgtype">
+
+
+<article *ngSwitchCase="1" class="message is-info">
+  <div class="message-header">
+    <p>Info</p>
+  </div>
+  <div class="message-body">
+
+    this is info box
+  </div>
+</article>
+<article *ngSwitchCase="2" class="message is-warning">
+    <div class="message-header">
+      <p>Info</p>
+    </div>
+    <div class="message-body">
+  You have some field error!
+    </div>
+  </article>
+  <article *ngSwitchCase="3" class="message is-danger">
+      <div class="message-header">
+        <p>Info</p>
+      </div>
+      <div class="message-body">
+    
+       Internal Server Error
+      </div>
+    </article>
+    <article *ngSwitchDefault class="message">
+        <div class="message-header">
+          <p>Info</p>
+        </div>
+        <div class="message-body">
+      This is default
+        </div>
+      </article>
+</div>
+<!-- NG Switch -->
