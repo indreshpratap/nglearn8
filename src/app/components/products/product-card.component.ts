@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
     selector: 'app-product-card',
@@ -6,4 +7,22 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductCardComponent {
     @Input() product;
+    @Input() mode:number;
+
+    @Output() addToFav = new EventEmitter();
+    @Output("onCartAction") onCart = new EventEmitter();
+
+
+    /**
+     * On clicking of add to fab icon
+     */
+    onAddToFav(){
+        console.log("clicked on add to fab icon");
+
+        this.addToFav.emit(this.product);
+    }
+
+    onCartClick(){
+        this.onCart.emit(this.product);
+    }
 }
