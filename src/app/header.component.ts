@@ -19,5 +19,5 @@ import { Component } from '@angular/core';
     
 })
 export class HeaderComponent {
-   title = "Angular Application V8";
+   title = "Angular Application V8.1";
 }
