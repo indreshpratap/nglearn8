@@ -5,7 +5,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     selector: 'app-product-card',
     templateUrl: './product-card.component.html'
 })
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit{
+   
     @Input() product;
     @Input() mode:number;
 
@@ -13,6 +14,9 @@ export class ProductCardComponent {
     @Output("onCartAction") onCart = new EventEmitter();
 
 
+    ngOnInit(): void {
+       console.log("Ng OnInit product-card",this.product.name);
+    }
     /**
      * On clicking of add to fab icon
      */
