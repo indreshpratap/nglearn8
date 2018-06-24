@@ -8,10 +8,14 @@
 
 
     <h2 class="title is-5">In Cart</h2>
+    <button (click)="changeMode()">Change Mode ({{mode}})</button>
     <div class="columns is-multiline">
         <ng-container *ngFor="let prod of products">
             <div class="column is-3" *ngIf="prod.incart">
-                <app-product-card mode="1" [product]="prod" (onCartAction)="handleOnCart($event)"></app-product-card>
+                <app-product-card [mode]="mode" [product]="prod" (onCartAction)="handleOnCart($event)">
+                    <b>It's in your cart {{mode}}</b>
+                  
+                </app-product-card>
             </div>
         </ng-container>
 

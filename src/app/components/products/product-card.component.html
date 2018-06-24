@@ -8,6 +8,9 @@
         <p class="title is-5"> {{product.name}} </p>
         <p class="subtitle is-7">{{product.department}} </p>
         <p class="subtitle is-7">{{product.product}} </p>
+        <div>
+            <ng-content></ng-content>
+        </div>
         <p class="has-text-right">
             <i (click)="onAddToFav()" class="fa" [class.fa-heart-o]="!product.isfav" [class.fa-heart]="product.isfav" [class.fav]="product.isfav"></i>
           <span *ngIf="mode!=1">

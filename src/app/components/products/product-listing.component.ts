@@ -9,6 +9,7 @@ import * as faker from 'faker';
 })
 export class ProductListingComponent {
     products = [];
+    mode = 1;
 
     constructor() {
         console.log("Preparing product list");
@@ -35,6 +36,10 @@ export class ProductListingComponent {
     handleOnCart(data){
         console.log("handleAddToFav received ", data);
         data.incart= !data.incart;
+    }
+
+    changeMode(){
+        this.mode = this.mode===1?2:1;
     }
 
 }
