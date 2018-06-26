@@ -5,7 +5,9 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
     selector: 'app-product-card',
     templateUrl: './product-card.component.html'
 })
-export class ProductCardComponent implements OnChanges{
+
+export class ProductCardComponent implements OnChanges,OnInit{
+
     @Input() product;
     @Input() mode:number;
 
@@ -20,6 +22,10 @@ export class ProductCardComponent implements OnChanges{
       if(changes.product){
         console.log("Yes product property changed",changes.product);
       }
+    }
+    
+    ngOnInit(): void {
+       console.log("Ng OnInit product-card",this.product.name);
     }
     /**
      * On clicking of add to fab icon
