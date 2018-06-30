@@ -1,5 +1,5 @@
 <div class="box">
-    <h2 class="title is-5">Available Products</h2>
+    <h2 highlight bgcolor="lightblue" class="title is-5">Available Products</h2>
     <div class="columns is-multiline">
         <div class="column is-3" *ngFor="let prod of products">
             <app-product-card [product]="prod" (addToFav)="handleAddToFav($event)" (onCartAction)="handleOnCart($event)"></app-product-card>
@@ -7,8 +7,8 @@
     </div>
 
 
-    <h2 class="title is-5">In Cart</h2>
-    <button (click)="changeMode()">Change Mode ({{mode}})</button>
+    <h2 class="title is-5" highlight>In Cart</h2>
+    <button (click)="changeMode()" highlight>Change Mode ({{mode}})</button>
     <div class="columns is-multiline">
         <ng-container *ngFor="let prod of products">
             <div class="column is-3" *ngIf="prod.incart">

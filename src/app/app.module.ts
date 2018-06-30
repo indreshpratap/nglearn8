@@ -8,6 +8,7 @@ import { PropertyBindingComponent } from './components/property-binding.componen
 import { ProductListingComponent } from './components/products/product-listing.component';
 import { ProductCardComponent } from './components/products/product-card.component';
 import { AboutUsComponent } from './components/aboutus.component';
+import { HighlightDirective } from './directive/highlight.directive';
 
 const routes: Routes = [
   {path:"",redirectTo:"products",pathMatch:"full" },
@@ -21,7 +22,8 @@ const routes: Routes = [
     AppComponent, HeaderComponent, PropertyBindingComponent,
     ProductListingComponent,
     ProductCardComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
