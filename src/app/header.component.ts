@@ -27,4 +27,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
    title = "Angular Application V8.1";
+
+   sayHello(){
+     return "hi there";
+   }
 }
