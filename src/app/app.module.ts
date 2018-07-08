@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "products", component: ProductListingComponent },
   {path:"aboutus",component:AboutUsComponent}
 ];
-
+  
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent, PropertyBindingComponent,
