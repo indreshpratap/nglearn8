@@ -1,15 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
-    background: lightblue;
+  background: lightblue;
 }
 
 .fav {
-    color: orange;
+  color: orange;
 }
+
 .incart {
-    color:red;
+  color: red;
 }
 
 .notincart {
-    color:green;
+  color: green;
+}
+
+.star {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: yellow;
+  margin-right: 5px;
+  border-radius: 13px;
 }

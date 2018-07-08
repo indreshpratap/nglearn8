@@ -1,4 +1,27 @@
 <div class="box">
+   <div> Its active: {{ flag | yesno | lowercase }}</div>
+First Product : 
+{{ products[0] | myjson }}
+<button (click)="flag = !flag">Toogle</button>
+<div>
+    <!-- with parameter-->
+<span *ngFor="let star of ('star'| times:5)" class="star"></span>
+</div>
+<div>
+    <!--without parameter-->
+<span *ngFor="let star of (3 | times)" class="star"></span>
+</div>
+<span *ngFor="let star of (mode | times)" class="star"></span>
+<div>
+        <span *ngFor="let star of ('mode' | times:mode)" class="star"></span>
+
+</div>
+
+<input type="number" [(ngModel)]="numoftimes">
+<div>
+        <span *ngFor="let star of ('mode' | times:numoftimes)" class="star"></span>
+
+</div>
     <h2 highlight bgcolor="lightblue" class="title is-5">Available Products</h2>
     <div class="columns is-multiline">
         <div class="column is-3" *ngFor="let prod of products">

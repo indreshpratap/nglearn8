@@ -13,6 +13,10 @@ export class ProductListingComponent implements AfterViewInit {
     products = [];
     mode = 1;
 
+    flag= null;
+
+    numoftimes=2;
+
     @ViewChildren(HighlightDirective) highlights: QueryList<HighlightDirective>;
 
     constructor() {
