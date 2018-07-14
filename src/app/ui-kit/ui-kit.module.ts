@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PRIME_NG } from './primeng';
+import { YesNoPipe } from './pipe/yesno.pipe';
+import { TimesPipe } from './pipe/times.pipe';
 
 let IMPORT_EXPORT = [
   CommonModule,
@@ -11,6 +13,6 @@ let IMPORT_EXPORT = [
 @NgModule({
   imports: IMPORT_EXPORT,
   exports: IMPORT_EXPORT,
-  declarations: []
+  declarations: [YesNoPipe,TimesPipe]
 })
 export class UiKitModule { }

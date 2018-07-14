@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { UiKitModule } from '../ui-kit/ui-kit.module';
 import { SharedModule } from '../shared/shared.module';
-import { LoginComponent } from './login/login.component';
+import * as fromContainers from './containers';
+import * as fromComponents from './components';
+import { RouterModule } from '@angular/router';
+
+
+
 
 
 @NgModule({
   imports: [
   UiKitModule,
-  SharedModule
+  SharedModule,
+  RouterModule.forChild(fromContainers.routes)
   ],
-  exports:[LoginComponent],
-  declarations: [LoginComponent]
+  exports:[],
+  declarations: [
+    ...fromContainers.containers,
+    ...fromComponents.components
+  ]
 })
 export class CoreModule { }

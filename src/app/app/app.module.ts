@@ -6,9 +6,6 @@ import { AppComponent } from './app.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
 
-const routes: Routes = [
-  
-];
   
 @NgModule({
   declarations: [
@@ -18,8 +15,8 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
+    RouterModule.forRoot([]),
     CoreModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
