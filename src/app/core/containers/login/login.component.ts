@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
  
+  filter;
+  username="admin";
   constructor() { }
 
   ngOnInit() {
+  }
+
+  doLogin(loginform){
+    // console.log(loginform);
+    console.log(loginform.value);
   }
 
 }
