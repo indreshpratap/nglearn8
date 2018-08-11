@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PRIME_NG } from './primeng';
 import { YesNoPipe } from './pipe/yesno.pipe';
 import { TimesPipe } from './pipe/times.pipe';
-
-let IMPORT_EXPORT = [
+import { components } from './components';
+const IMPORT_EXPORT = [
   CommonModule,
   FormsModule,
+  ReactiveFormsModule,
   ...PRIME_NG
-]
+];
+
 @NgModule({
   imports: IMPORT_EXPORT,
-  exports: IMPORT_EXPORT,
-  declarations: [YesNoPipe,TimesPipe]
+  exports: [...IMPORT_EXPORT, ...components],
+  declarations: [YesNoPipe, TimesPipe, ...components]
 })
-export class UiKitModule { }
+export class UiKitModule {}

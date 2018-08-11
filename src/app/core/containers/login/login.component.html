@@ -1,31 +1,32 @@
 <div>
-    
-    <form #login="ngForm">
-            <input type="text" name="myfilter" [(ngModel)]="filter">  
-            <div>
-             <input #username="ngModel" type="text" maxlength="100" minlength="10" required pattern="[0-9a-z]+" name="username" [ngModel]="username">
-        <!-- {{login.controls?.username?.errors|json}}    -->
-        <span *ngIf="username.touched && login.controls['username'].errors">
-            <span *ngIf="login.controls?.username?.errors?.pattern">Only numeric and lower case string allowed</span>
-        <span *ngIf="login.controls?.username?.errors?.minlength">Minimum 10 chars</span>  
-        </span>
-      
 
-            </div>
-        <div>
-        <input #pwd="ngModel" type="password" required name="password" ngModel>
-        <span *ngIf="pwd.touched && pwd['errors']?.required">Password is required</span>
-        </div>
-        <button  (click)="doLogin(login)">Login</button>
-    </form>
+  <form #login="ngForm">
+    <input type="text" name="myfilter" #filterRef="ngModel" [(ngModel)]="filter">
+    <div>
+      <input #usernameRef="ngModel" type="text" maxlength="100" minlength="10" required pattern="[0-9a-z]+" name="username" [ngModel]="username">
+      <!-- {{login.controls?.username?.errors|json}}    -->
+      <span *ngIf="usernameRef.touched && usernameRef.errors">
+        <span *ngIf="usernameRef?.errors?.pattern">Only numeric and lower case string allowed</span>
+        <span *ngIf="usernameRef?.errors?.minlength">Minimum 10 chars</span>
+        <span *ngIf="usernameRef?.errors?.required">Username required</span>
+      </span>
 
 
-    <div>Current username:  {{ username }}</div>
-    <div>Current Filter:  {{filter}}</div>
+    </div>
+    <div>
+      <input #pwd="ngModel" type="password" required name="password" ngModel>
+      <span *ngIf="pwd.touched && pwd['errors']?.required">Password is required</span>
+    </div>
+    <button [disabled]="login.valid" (click)="doLogin(login)">Login</button>
+  </form>
 
-   Valid: {{login.valid}}  Invalid: {{ login.invalid }}
 
-   <pre>
+  <div>Current username: {{ username }}</div>
+  <div>Current Filter: {{filter}}</div>
+
+  Valid: {{login.valid}} Invalid: {{ login.invalid }}
+
+  <pre>
        {{ login.value | json }}
    </pre>
 </div>

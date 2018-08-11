@@ -6,13 +6,10 @@ import * as fromContainers from './containers';
 
 @NgModule({
   imports: [
-  UiKitModule,
-  SharedModule,
-  RouterModule.forChild(fromContainers.routes),
-  
+    UiKitModule,
+    SharedModule,
+    RouterModule.forChild(fromContainers.routes)
   ],
-  declarations: [
-    ...fromContainers.containers
-  ]
+  declarations: [...fromContainers.containers]
 })
-export class AdminModule { }
+export class AdminModule {}
