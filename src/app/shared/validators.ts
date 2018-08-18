@@ -11,4 +11,15 @@ export class CustomValidaors {
       return { pincode: true };
     }
   }
+
+  static alfaspace(control: FormControl) {
+    if (!control.value) {
+      return null;
+    }
+    if (/^[a-zA-Z ]+$/.test(control.value)) {
+      return null;
+    } else {
+      return { alfaspace: true };
+    }
+  }
 }

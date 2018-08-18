@@ -15,7 +15,7 @@ export class FieldErrorsComponent implements OnInit {
 
   ngOnInit() {}
 
-  getLbl() {
+  getLabel() {
     return this.label ? this.label : 'Field';
   }
 }

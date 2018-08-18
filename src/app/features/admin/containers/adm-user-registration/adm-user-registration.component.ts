@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { CustomValidaors } from "../../../../shared/validators";
+import { ObservableExample } from "../../../../shared/observable.example";
 
 @Component({
   selector: "app-adm-user-registration",
@@ -9,7 +10,11 @@ import { CustomValidaors } from "../../../../shared/validators";
 })
 export class AdmUserRegistrationComponent implements OnInit {
   form: FormGroup;
-  constructor() {}
+  constructor() {
+    let obexample = new ObservableExample();
+    obexample.testObservable();
+
+  }
 
   ngOnInit() {
     this.prepareForm();
@@ -65,7 +70,8 @@ export class AdmUserRegistrationComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl(null, [
         Validators.required,
-        Validators.pattern("[a-z]+")
+        CustomValidaors.alfaspace
+        // Validators.pattern("[a-z]+")
       ]),
       email: new FormControl(),
       mobile: new FormControl(),

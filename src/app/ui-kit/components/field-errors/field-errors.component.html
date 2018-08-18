@@ -1,5 +1,6 @@
 <div class="error" *ngIf="control && control.touched && control.errors">
-  <span *ngIf="control.errors['required']">{{getLbl()}} Required</span>
+  <span *ngIf="control.errors['required']">{{getLabel()}} Required</span>
   <span *ngIf="control.errors['pincode']">Pincode invalid</span>
   <span *ngIf="control.errors['pattern']">Pattern invalid</span>
+  <span *ngIf="control.errors['alfaspace']">Only characters and space is allowed</span>
 </div>
