@@ -5,8 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SharedModule } from '../shared/shared.module';
 import { CoreModule } from '../core/core.module';
-
-  
+import { MarkdownModule } from 'ngx-markdown';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,6 +13,7 @@ import { CoreModule } from '../core/core.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MarkdownModule.forRoot(),
     SharedModule,
     RouterModule.forRoot([]),
     CoreModule,
