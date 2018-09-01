@@ -25,7 +25,7 @@
     "core-js": "^2.4.1",
     "faker": "^4.1.0",
     "ngx-markdown": "^1.5.2",
-    "primeng": "^6.0.0",
+    "primeng": "^5.2.7",
     "prismjs": "^1.15.0",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"

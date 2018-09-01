@@ -13,6 +13,11 @@
       <label>Chapter Name</label>
       <input formControlName="chapter_name" type="text" class="form-control">
     </div>
+    <div class="form-group">
+      <label>Chapter Creation Date</label>
+      <p-calendar formControlName="created_date" dataType="string" dateFormat="dd-mm-yy"></p-calendar>
+      {{form.get('created_date').value}}
+    </div>
 
     <div class="form-group">
       <label>Accessbility</label>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../../app/data.service';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   filter;
-  username='admin';
-  constructor() { }
+  username = 'admin';
+
+  // dependency injection
+  constructor(private ds: DataService) {
+
+  }
 
   ngOnInit() {
   }
 
-  doLogin(loginform){
+  doLogin(loginform) {
     // console.log(loginform);
-    console.log(loginform.value);
+    this.ds.doLogin(loginform.value);
   }
 
 }

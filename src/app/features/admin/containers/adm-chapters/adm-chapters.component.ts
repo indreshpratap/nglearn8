@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { DataService } from '../../../../app/data.service';
 
 @Component({
   selector: 'app-adm-chapters',
@@ -9,15 +10,20 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 export class AdmChaptersComponent implements OnInit {
   availableCourses;
   form: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private ds:DataService) { }
 
   ngOnInit() {
+   this.ds.getCourses().subscribe((res:any) => {
+     this.availableCourses = res.data;
+    console.log("received the response from json:", res.data);
+})
     this.prepareForm();
 
-    this.availableCourses = [
-      { id: 1, label: "Angular" },
-      { id: 2, label: "JavaScript" },
-    ];
+    // this.availableCourses = [
+    //   { id: 1, label: "Angular" },
+    //   { id: 2, label: "JavaScript" },
+    // ];
   }
 
   prepareForm() {
@@ -26,6 +32,7 @@ export class AdmChaptersComponent implements OnInit {
       chapter_name: ['one', [Validators.required]],
       accessbility: [],
       content: [],
+      created_date:[]
     });
 
     // this.form = new FormGroup({

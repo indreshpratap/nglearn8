@@ -11,11 +11,11 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-  UiKitModule,
-  SharedModule,
-  RouterModule.forChild(fromContainers.routes)
+    UiKitModule,
+    SharedModule,
+    RouterModule.forChild(fromContainers.routes)
   ],
-  exports:[],
+  exports: [],
   declarations: [
     ...fromContainers.containers,
     ...fromComponents.components
