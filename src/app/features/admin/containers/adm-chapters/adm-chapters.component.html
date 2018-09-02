@@ -5,7 +5,7 @@
       <label>Course</label>
       <select formControlName="course" class="form-control">
         <option [ngValue]="null">Select Course</option>
-        <option *ngFor="let course of availableCourses" [ngValue]="course.id">{{course.label}}</option>
+        <option *ngFor="let course of availableCourses" [ngValue]="course._id">{{course.course_name}}</option>
       </select>
       <app-field-errors label="Name" [control]="form.get('course')"></app-field-errors>
     </div>

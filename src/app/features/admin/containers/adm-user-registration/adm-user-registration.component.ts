@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { CustomValidaors } from "../../../../shared/validators";
 import { ObservableExample } from "../../../../shared/observable.example";
+import { DataService } from "../../../../app/data.service";
 
 @Component({
   selector: "app-adm-user-registration",
@@ -10,14 +11,29 @@ import { ObservableExample } from "../../../../shared/observable.example";
 })
 export class AdmUserRegistrationComponent implements OnInit {
   form: FormGroup;
-  constructor() {
-    let obexample = new ObservableExample();
-    obexample.testObservable();
+  constructor(private ds: DataService) {
+    //  let obexample = new ObservableExample();
+    // obexample.testObservable();
 
   }
 
   ngOnInit() {
     this.prepareForm();
+  }
+
+  saveUser() {
+    if (this.form.valid) {
+      this.ds.saveUser(this.form.value).subscribe((res: any) => {
+        console.log(res);
+        alert('User saved');
+        this.form.reset();
+      }, (err) => {
+        alert('Failed to save!');
+        console.log(err);
+      })
+    } else {
+      alert('Please fillup the form');
+    }
   }
 
   disable() {
@@ -39,7 +55,7 @@ export class AdmUserRegistrationComponent implements OnInit {
     this.form.setValue({
       name: "afsdA",
       email: "fsdds",
-    mobile: "9995000",
+      mobile: "9995000",
       gender: "Male",
       address: {
         line1: "dsad",

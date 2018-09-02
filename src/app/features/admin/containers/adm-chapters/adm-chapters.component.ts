@@ -11,19 +11,14 @@ export class AdmChaptersComponent implements OnInit {
   availableCourses;
   form: FormGroup;
   constructor(private fb: FormBuilder,
-    private ds:DataService) { }
+    private ds: DataService) { }
 
   ngOnInit() {
-   this.ds.getCourses().subscribe((res:any) => {
-     this.availableCourses = res.data;
-    console.log("received the response from json:", res.data);
-})
+    this.ds.getCourses().subscribe(res => {
+      this.availableCourses = res.data;
+     // console.log("received the response from json:", res.data);
+    })
     this.prepareForm();
-
-    // this.availableCourses = [
-    //   { id: 1, label: "Angular" },
-    //   { id: 2, label: "JavaScript" },
-    // ];
   }
 
   prepareForm() {
@@ -32,7 +27,7 @@ export class AdmChaptersComponent implements OnInit {
       chapter_name: ['one', [Validators.required]],
       accessbility: [],
       content: [],
-      created_date:[]
+      created_date: []
     });
 
     // this.form = new FormGroup({
@@ -41,9 +36,9 @@ export class AdmChaptersComponent implements OnInit {
     //   accessbility: new FormControl(),
 
     // })
-   
+
   }
- get mdContent() {
-      return this.form.get('content').value;
-    }
+  get mdContent() {
+    return this.form.get('content').value;
+  }
 }

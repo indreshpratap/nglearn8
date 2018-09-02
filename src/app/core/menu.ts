@@ -1,10 +1,12 @@
 const menu = {
     admin: [
         { label: 'Dashboard', link: '/admin/dashboard' },
+        { label: 'Users', link: '/admin/users' },
         { label: 'New User', link: '/admin/user-registration' },
-        { label: 'Course', link: '/admin/course' },
+        { label: 'Courses', link: '/admin/courses' },
         { label: 'Chapters', link: '/admin/chapters' },
-        { label: 'Batch', link: '/admin/batch' }
+        { label: 'New Batch', link: '/admin/new-batch' }
+        
     ],
 
     user: [
