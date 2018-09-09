@@ -12,6 +12,8 @@ admin.get('/users', (req, res) => {
 
 admin.post('/register-user', (req, res) => {
     let data = req.body;
+    data.role = 'user';
+    data.password = '12345';
     db.users.insert(data, (err, newdoc) => {
         if (err) return ERROR(res,err);
         OK(res,newdoc);

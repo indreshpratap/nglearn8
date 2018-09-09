@@ -7,13 +7,17 @@ app.use(cors());
 app.use(bodyParser.json());
 var adminRoutes = require('./admin.routes');
 var userRoutes = require('./user.routes');
+var securityRoutes = require('./security.routes');
 app.get("/", (req, res) => {
     res.send("Yes server working");
 });
 
 
+app.use("/api",securityRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/user', userRoutes);
+
+
 
 app.listen(3000, () => {
     console.log("server running at port 3000");

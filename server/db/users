@@ -1,2 +1,2 @@
-{"name":"Manish","email":"manish@gmail.com","mobile":"898888888","gender":"Male","address":{"line1":"Delhi","line2":"Mayur vihar","city":"New Delhi","pincode":"110023"},"_id":"QzzqKRKMehPOFb4r"}
-{"name":"Saurabh","email":"saurabh@gmail.com","mobile":"99999999","gender":"Male","address":{"line1":"Noida sector 15","line2":"Noida","city":"Noida","pincode":"201304"},"_id":"kuLCMSVetAD06lEV"}
+{"name":"Parvesh","email":"parvesh@gmail.com","mobile":"9999","gender":"Male","address":{"line1":"NA","line2":"NA","city":"NA","pincode":"123456"},"role":"user","password":"12345","_id":"FyuG8EauJ5t1AK3z"}
+{"name":"Admin","email":"admin@gmail.com","mobile":"99999999","gender":"Male","address":{"line1":"Noida sector 15","line2":"Noida","city":"Noida","pincode":"201304"},"password":"admin","role":"admin","_id":"JHo8ub5u47R7HAp6"}

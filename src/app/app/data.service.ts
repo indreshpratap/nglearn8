@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { environment } from '../../environments/environment';
-import { ApiResonse } from "./api.resonse";
+import {getUrl} from '../shared/util';
+import { ApiResponse } from "./api.response";
 
 @Injectable()
 export class DataService {
@@ -27,35 +27,33 @@ export class DataService {
     // }
 
     getUsers() {
-        return this.httpClient.get<ApiResonse>(this.getUrl("admin/users"))
+        return this.httpClient.get<ApiResponse>(getUrl("admin/users"))
     }
 
     getProfile() {
-        return this.httpClient.get<ApiResonse>(this.getUrl("user/profile"))
+        return this.httpClient.get<ApiResponse>(getUrl("user/profile"))
     }
     getCourses() {
-        return this.httpClient.get<ApiResonse>(this.getUrl("admin/get-courses"))
+        return this.httpClient.get<ApiResponse>(getUrl("admin/get-courses"))
     }
     getBatch() {
-        return this.httpClient.get<ApiResonse>(this.getUrl("admin/get-batch"))
+        return this.httpClient.get<ApiResponse>(getUrl("admin/get-batch"))
     }
 
 
     saveUser(data) {
-        return this.httpClient.post<ApiResonse>(this.getUrl('admin/register-user'), data);
+        return this.httpClient.post<ApiResponse>(getUrl('admin/register-user'), data);
     }
     saveCourse(data) {
-        return this.httpClient.post<ApiResonse>(this.getUrl('admin/register-course'), data);
+        return this.httpClient.post<ApiResponse>(getUrl('admin/register-course'), data);
     }
     saveBatch(data) {
-        return this.httpClient.post<ApiResonse>(this.getUrl('admin/register-batch'), data);
+        return this.httpClient.post<ApiResponse>(getUrl('admin/register-batch'), data);
     }
 
     saveChapter(data) {
-        return this.httpClient.post<ApiResonse>(this.getUrl('admin/add-chapter'), data);
+        return this.httpClient.post<ApiResponse>(getUrl('admin/add-chapter'), data);
     }
 
-    private getUrl(url) {
-        return environment.apiPath + url;
-    }
+   
 }

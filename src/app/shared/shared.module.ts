@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 
+import { CanDeactivateGuard ,AdminAuthGuard} from './guards';
+
 @NgModule({
   imports: [
    
   ],
-  declarations: []
+  declarations: [],
+  providers:[AdminAuthGuard,CanDeactivateGuard]
 })
 export class SharedModule { }

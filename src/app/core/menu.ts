@@ -10,6 +10,9 @@ const menu = {
     ],
 
     user: [
+        { label: 'Admin Dashboard', link: '/admin' },
+        { label: 'Admin Users', link: '/admin/users' },
+        { label: 'Admin New User', link: '/admin/user-registration' },
         { label: 'Dashboard', link: '/user/dashboard' },
         { label: 'Account', link: '/user/account' },
         { label: 'Courses', link: '/user/courses' },

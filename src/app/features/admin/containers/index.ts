@@ -16,6 +16,7 @@ export const containers = [
 ];
 
 export const routes: Routes = [
+  { path: "", redirectTo: "/admin/dashboard", pathMatch: "full" },
   { path: 'dashboard', component: AdmDashboardComponent },
   { path: 'user-registration', component: AdmUserRegistrationComponent },
   { path: 'chapters', component: AdmChaptersComponent },

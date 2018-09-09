@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../../app/data.service';
+import { LoginService } from '../../login.service';
+import { Router } from '@angular/router';
+import { Storage } from '../../../shared/storage.helper';
 
 @Component({
   selector: 'app-login',
@@ -9,19 +11,28 @@ import { DataService } from '../../../app/data.service';
 export class LoginComponent implements OnInit {
 
   filter;
-  username = 'admin';
+  username = 'admin@gmail.com';
 
   // dependency injection
-  constructor(private ds: DataService) {
+  constructor(private router: Router, private loginService: LoginService) {
 
   }
 
   ngOnInit() {
+    Storage.clearAll();
   }
 
   doLogin(loginform) {
+
     // console.log(loginform);
-    this.ds.doLogin(loginform.value);
+    this.loginService.doLogin(loginform.value).subscribe(res => {
+      if (res.status) {
+        Storage.storeUserInfo(res.data);
+        this.router.navigate([""]);
+      }else {
+        alert(res.error);
+      }
+    });
   }
 
 }

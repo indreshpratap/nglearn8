@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '../../../shared/storage.helper';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  name;
   constructor() { }
 
   ngOnInit() {
+    this.name = Storage.getName();
   }
 
 }

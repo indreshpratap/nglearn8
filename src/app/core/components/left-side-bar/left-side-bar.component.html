@@ -1,5 +1,16 @@
 <ul>
+    <li>
+        <a routerLink="">Home</a>
+      </li>
+      <li>
+        <a routerLink="/intro">Introduction</a>
+
+      </li>
   <li *ngFor="let menu of currentMenu">
     <a [routerLink]="menu.link">{{menu.label}}</a>
+  </li>
+
+  <li>
+    <a routerLink="/login">Logout</a>
   </li>
 </ul>

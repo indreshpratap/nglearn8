@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../app/data.service';
+import { Router } from '@angular/router';
+import { Storage } from '../../../shared/storage.helper';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +10,14 @@ import { DataService } from '../../../app/data.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private ds: DataService) { }
+  isLoggedIn = false;
+  constructor(private router: Router, private ds: DataService) { }
 
   ngOnInit() {
-    console.log("got subject", this.ds.getSubject());
-
-    this.ds.getCourses().subscribe((res: any) => {
-      console.log("Got courses in home", res.data);
-    });
+    this.isLoggedIn = Storage.isLoggedIn();
+    if (this.isLoggedIn === false) {
+      this.router.navigate(['login']);
+    }
   }
 
 }

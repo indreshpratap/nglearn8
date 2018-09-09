@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import * as fromContainers from './containers';
 import * as fromComponents from './components';
 import { RouterModule } from '@angular/router';
+import { LoginService } from './login.service';
 
 
 
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
   declarations: [
     ...fromContainers.containers,
     ...fromComponents.components
-  ]
+  ],
+  providers:[LoginService]
 })
 export class CoreModule { }
