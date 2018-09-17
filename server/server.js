@@ -9,19 +9,19 @@ var securityRoutes = require('./security.routes');
 var fs = require('fs');
 var {isAdmin,isLoggedIn} = require('./session_check');
 
-app.use("/webtut/",express.static(path.resolve(__dirname,"public/")));
+app.use("/",express.static(path.resolve(__dirname,"public/")));
 
 middlewares(app);
 
 
-app.get("/webtut/", (req, res) => {
+app.get("/", (req, res) => {
    res.send(fs.readFileSync(path.resolve(__dirname,'public/index.html')));
 });
 
 
-app.use("/webtut/api",securityRoutes);
-app.use('/webtut/api/admin',isAdmin, adminRoutes);
-app.use('/webtut/api/user',isLoggedIn, userRoutes);
+app.use("/api",securityRoutes);
+app.use('/api/admin',isAdmin, adminRoutes);
+app.use('/api/user',isLoggedIn, userRoutes);
 
 
 
