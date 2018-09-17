@@ -3,7 +3,7 @@
   <form #login="ngForm">
     <!-- <input type="text" name="myfilter" #filterRef="ngModel" [(ngModel)]="filter"> -->
     <div>
-      <input #usernameRef="ngModel" type="text" placeholder="username" maxlength="100" minlength="4" required name="email" [ngModel]="username">
+      <input #usernameRef="ngModel" type="text" placeholder="username" maxlength="100" minlength="4" required name="username" [ngModel]="username">
       <!-- {{login.controls?.username?.errors|json}}    -->
       <span *ngIf="usernameRef.touched && usernameRef.errors">
         <span *ngIf="usernameRef?.errors?.pattern">Only numeric and lower case string allowed</span>

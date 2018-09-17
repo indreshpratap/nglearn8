@@ -30,7 +30,7 @@ admin.post('/register-course', (req, res) => {
 });
 
 admin.get('/get-courses', (req, res) => {
-
+//console.log("User are you there?",req.user);
     db.course.find({}, (err, courses) => {
         if (err) return ERROR(res,err);
         OK(res,courses);

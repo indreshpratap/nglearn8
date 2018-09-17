@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         Storage.storeUserInfo(res.data);
         this.router.navigate([""]);
       }else {
-        alert(res.error);
+        alert(res.data);
       }
     });
   }

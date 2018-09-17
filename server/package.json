@@ -1,0 +1,30 @@
+{
+  "name": "nglearn8",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy-conf.json",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "server": "nodemon server/server.js"
+  },
+  "private": true,
+  "dependencies": {
+   
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+  
+    "nedb": "^1.8.0",
+  
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+   
+    "session-file-store": "^1.2.0"
+    
+  }
+ 
+}
